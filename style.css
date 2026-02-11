@@ -1,0 +1,152 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+    background: linear-gradient(180deg, #ff9a9e, #fad0c4);
+    color: white;
+    text-align: center;
+}
+
+/* PANTALLAS */
+.pantalla {
+    min-height: 100vh;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.8s, transform 0.8s;
+}
+
+.oculto {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    transform: scale(0.95);
+}
+
+/* TITULO RESPONSIVE */
+.titulo {
+    font-size: clamp(28px, 6vw, 48px);
+    animation: latido 2s infinite;
+}
+
+@keyframes latido {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* CARTA */
+.carta-cerrada {
+    margin-top: 30px;
+    font-size: clamp(50px, 10vw, 80px);
+    cursor: pointer;
+    animation: flotarCarta 3s infinite ease-in-out;
+}
+
+.carta-cerrada p {
+    font-size: 14px;
+}
+
+@keyframes flotarCarta {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* PAPEL */
+.papel {
+    background: white;
+    color: #333;
+    padding: 25px;
+    border-radius: 20px;
+    width: 95%;
+    max-width: 700px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+    line-height: 1.7;
+    font-size: clamp(14px, 2.5vw, 18px);
+}
+
+/* BOTONES */
+.botones {
+    margin-top: 20px;
+}
+
+button {
+    padding: 12px 22px;
+    font-size: clamp(14px, 3vw, 18px);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin: 8px;
+    transition: transform 0.2s;
+}
+
+.si {
+    background: #ff4d6d;
+    color: white;
+}
+
+.no {
+    background: gray;
+    color: white;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+/* FINAL */
+.gracias {
+    font-size: clamp(26px, 6vw, 40px);
+    animation: latido 2s infinite;
+}
+
+.video {
+    width: 90%;
+    max-width: 320px;
+    border-radius: 20px;
+    margin-top: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+/* CORAZONES */
+.corazones span {
+    position: absolute;
+    color: #ff4d6d;
+    animation: flotar 6s linear infinite;
+}
+
+@keyframes flotar {
+    from {
+        transform: translateY(100vh);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-10vh);
+        opacity: 0;
+    }
+}
