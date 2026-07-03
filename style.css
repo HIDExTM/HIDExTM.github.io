@@ -6,7 +6,8 @@ body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
     overflow-x: hidden;
-    background: linear-gradient(180deg, #ff9a9e, #fad0c4);
+    /* NUEVO: Degradado mágico de lila a violeta suave */
+    background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
     color: white;
     text-align: center;
 }
@@ -33,6 +34,7 @@ body {
 /* TITULO RESPONSIVE */
 .titulo {
     font-size: clamp(28px, 6vw, 48px);
+    text-shadow: 0 4px 12px rgba(94, 43, 131, 0.2); /* Sombra morada sutil */
     animation: latido 2s infinite;
 }
 
@@ -40,11 +42,9 @@ body {
     0% {
         transform: scale(1);
     }
-
     50% {
         transform: scale(1.05);
     }
-
     100% {
         transform: scale(1);
     }
@@ -55,22 +55,23 @@ body {
     margin-top: 30px;
     font-size: clamp(50px, 10vw, 80px);
     cursor: pointer;
+    filter: drop-shadow(0 8px 15px rgba(94, 43, 131, 0.25));
     animation: flotarCarta 3s infinite ease-in-out;
 }
 
 .carta-cerrada p {
     font-size: 14px;
+    color: #fff;
+    opacity: 0.9;
 }
 
 @keyframes flotarCarta {
     0% {
         transform: translateY(0);
     }
-
     50% {
-        transform: translateY(-10px);
+        transform: translateY(-12px);
     }
-
     100% {
         transform: translateY(0);
     }
@@ -78,15 +79,16 @@ body {
 
 /* PAPEL */
 .papel {
-    background: white;
-    color: #333;
+    background: #faf5ff; /* NUEVO: Un blanco con un tinte lila elegantísimo */
+    color: #3b224c; /* NUEVO: Violeta berenjena muy oscuro para el texto (súper legible y cálido) */
     padding: 25px;
-    border-radius: 20px;
+    border-radius: 24px;
     width: 95%;
     max-width: 700px;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 15px 35px rgba(74, 20, 140, 0.2); /* Sombra mística */
     line-height: 1.7;
     font-size: clamp(14px, 2.5vw, 18px);
+    border: 2px solid #e9d5ff; /* Borde lila pastel */
 }
 
 /* BOTONES */
@@ -95,32 +97,43 @@ body {
 }
 
 button {
-    padding: 12px 22px;
+    padding: 12px 26px;
     font-size: clamp(14px, 3vw, 18px);
     border: none;
-    border-radius: 12px;
+    border-radius: 50px;
     cursor: pointer;
     margin: 8px;
-    transition: transform 0.2s;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(74, 20, 140, 0.15);
+    transition: transform 0.2s, background-color 0.3s;
 }
 
 .si {
-    background: #ff4d6d;
+    background: #9d4edd; /* NUEVO: Un morado vibrante, alegre y lleno de energía */
     color: white;
+}
+
+.si:hover {
+    background: #b5179e; /* Cambia a un tono fucsia/violeta hermoso al pasar el cursor */
 }
 
 .no {
-    background: gray;
-    color: white;
+    background: #e9d5ff; /* NUEVO: Lavanda clarito para el botón "No" */
+    color: #6b21a8; 
+}
+
+.no:hover {
+    background: #d8b4fe;
 }
 
 button:hover {
-    transform: scale(1.1);
+    transform: scale(1.1) translateY(-2px);
 }
 
 /* FINAL */
 .gracias {
     font-size: clamp(26px, 6vw, 40px);
+    text-shadow: 0 4px 12px rgba(94, 43, 131, 0.2);
     animation: latido 2s infinite;
 }
 
@@ -129,24 +142,27 @@ button:hover {
     max-width: 320px;
     border-radius: 20px;
     margin-top: 20px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 25px rgba(74, 20, 140, 0.3);
 }
 
 /* CORAZONES */
 .corazones span {
     position: absolute;
-    color: #ff4d6d;
+    color: #f3e8ff; /* NUEVO: Los corazones ahora flotan como destellos lila pastel muy claritos */
+    filter: drop-shadow(0 2px 8px rgba(255,255,255,0.5));
     animation: flotar 6s linear infinite;
 }
 
 @keyframes flotar {
     from {
-        transform: translateY(100vh);
-        opacity: 1;
+        transform: translateY(100vh) scale(0.8);
+        opacity: 0;
     }
-
+    10% {
+        opacity: 0.9;
+    }
     to {
-        transform: translateY(-10vh);
+        transform: translateY(-10vh) scale(1.2);
         opacity: 0;
     }
 }
